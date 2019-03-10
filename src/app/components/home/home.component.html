@@ -1,0 +1,24 @@
+<div class="new">
+  <div class="container">
+    <div class="row">
+
+        <h2>{{feetTitle}}</h2>
+
+      <div class="col-sm-6 col-md-4" *ngFor="let new of showenNews">
+        <div class="card">
+            <div class="img">
+                <img src={{new.enclosure.link}} alt="">
+            </div>
+            <div class="overlay"></div>
+          <div class="mask">
+            <span class="title">{{new.title}}</span>
+            <br>
+            <span>{{new.pubDate}}</span>
+
+          </div>
+        </div>
+      </div>
+<a  (click)="viewMore($event)">Load More</a>
+    </div>
+  </div>
+</div>
