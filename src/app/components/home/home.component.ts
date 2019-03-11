@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'home',
@@ -11,7 +10,7 @@ export class HomeComponent implements OnInit {
 
   allNews : any = [];
   showenNews: any = [];
-  feetTitle : string = '';
+  feetTitle : object = {};
 
   constructor(private http: HttpClient) { }
 
@@ -38,14 +37,14 @@ export class HomeComponent implements OnInit {
   }
 
  viewMore(e) {
-     let len: Number  = this.showenNews.length;  //7
-     let currentNews :any[]= this.showenNews;
+     const len = this.showenNews.length;  //7
+     const currentNews : any[] = this.showenNews;
     this.allNews.forEach(function(ele, i){
-if( i >= len && i < (len +7)){
+if( i >= len && i < (len + 7)) {
 
   currentNews.push(ele)
 }
-     })
+     });
 
 
 console.log(e);
