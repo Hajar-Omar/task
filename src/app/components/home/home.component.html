@@ -18,7 +18,7 @@
           </div>
         </div>
       </div>
-<a  (click)="viewMore($event)">Load More</a>
+<a  (click)="viewMore($event)" [hidden]="showenNews.length == allNews.length">Load More</a>
     </div>
   </div>
 </div>

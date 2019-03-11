@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
     this.allNews.forEach(function (ele, i) {
       if (i >= len && i < (len + 7)) {
 
-        currentNews.push(ele)
+        currentNews.push(ele);
       }
     })
 
