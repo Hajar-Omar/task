@@ -1,8 +1,32 @@
-.img{
-
+:root {
+  --main-bg-color: #ffff02;
+  --main-txt-color: #000000d1;
 }
+
+.titleH{
+  padding: 20px;
+  font-size: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #323232d1;
+    font-weight: bold;
+    position: relative;
+}
+.titleH::before {
+  content: '';
+  border: 2px solid #ffff02;
+  position: absolute;
+  left: 20px;
+  bottom: 12px;
+  width: 5%;
+}
+
 .title{
   font-weight: bold;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+  width: 85%;
 }
 .overlay{
   position: absolute;
@@ -19,4 +43,47 @@
     color: #fff;
     bottom: 0;
     padding-left: 10px;
+    width: 100%;
+}
+.view-more{
+  text-align: center;
+  padding: 50px;
+}
+.view-more a{
+  text-align: center;
+  text-decoration: none;
+
+  border: 3px solid #585858;
+  padding: 3px 32px;
+  font-weight: 500;
+  color: #585858;
+  cursor: pointer;
+
+
+}
+
+.row.cus-row > div:nth-of-type(7n), .row.cus-row > div:nth-of-type(7n+1) {
+  width:66.6%
+}
+.row.cus-row > div {
+  width:33.33%
+}
+.img {
+  height: 200px;
+}
+@media screen and (max-width: 768px){
+  .row.cus-row > div:nth-of-type(7n), .row.cus-row > div:nth-of-type(7n+1) {
+    width:50%;
+  }
+  .row.cus-row > div {
+    width:50%
+  }
+}
+@media screen and (max-width: 575px){
+  .row.cus-row > div:nth-of-type(7n), .row.cus-row > div:nth-of-type(7n+1) {
+    width:100%;
+  }
+  .row.cus-row > div {
+    width:100%
+  }
 }

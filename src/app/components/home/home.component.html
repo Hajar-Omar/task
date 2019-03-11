@@ -1,11 +1,12 @@
 <div class="new">
   <div class="container">
-    <div class="row">
+    <!-- Title of News -->
+      <h2 class="titleH">{{feetTitle.title}}</h2>
 
-        <h2>{{feetTitle.title}}</h2>
-
-      <div class="col-sm-6 col-md-4" *ngFor="let new of showenNews">
-        <div class="card">
+    <div class="row cus-row">
+      <!-- Cards OF News -->
+      <div class="cus-col wow slideInLeft" *ngFor="let new of showenNews">
+        <div class="card ">
             <div class="img">
                 <img src={{new.enclosure.link}} alt="">
             </div>
@@ -18,7 +19,14 @@
           </div>
         </div>
       </div>
-<a  (click)="viewMore($event)" [hidden]="showenNews.length == allNews.length">Load More</a>
     </div>
+    <!-- Btn Read More -->
+    <div class="view-more">
+        <a class="" (click)="viewMore($event)" [hidden]="showenNews.length == allNews.length">VIEW MORE</a>
+    </div>
+
   </div>
 </div>
+
+
+

@@ -1,25 +1,37 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { WOW } from 'node_modules/wowjs/dist/wow.min';
+import { Component, AfterViewInit , OnInit } from '@angular/core';
 
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+
+
+
+export class HomeComponent  implements AfterViewInit , OnInit {
 
   allNews: any = [];
   showenNews: any = [];
 
   feetTitle: object = {};
 
+   wow = new WOW({live: true});
+
 
   constructor(private http: HttpClient) { }
+
 
   url: string = 'https://api.rss2json.com/v1/api.json?rss_url=http://rss.cnn.com/rss/edition.rss';
 
 
+
+  ngAfterViewInit(){
+    this.wow.init();
+   };
   ngOnInit(): void {
+
     const getAllNews = this.http.get<Inew>(this.url);
     getAllNews.subscribe((response) => {
 
