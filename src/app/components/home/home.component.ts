@@ -29,7 +29,6 @@ export class HomeComponent  implements AfterViewInit , OnInit {
     this.wow.init();
    };
   ngOnInit(): void {
-
     this.newsService.getAllNews().subscribe((response) => {
       this.feetTitle = response.feed.title;
       this.allNews = response.items;
