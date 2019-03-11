@@ -3,10 +3,12 @@
     <!-- Title of News -->
       <h2 class="titleH">{{feetTitle.title}}</h2>
 
+
     <div class="row cus-row">
       <!-- Cards OF News -->
       <div class="cus-col wow slideInLeft" *ngFor="let new of showenNews">
         <div class="card ">
+
             <div class="img">
                 <img src={{new.enclosure.link}} alt="">
             </div>
@@ -27,6 +29,3 @@
 
   </div>
 </div>
-
-
-
