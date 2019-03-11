@@ -32,7 +32,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, .5);
+
 }
 .img img{
   width: 100%;
@@ -86,4 +86,62 @@
   .row.cus-row > div {
     width:100%
   }
+}
+
+.data{
+  font-size: 13px;
+  font-weight: 500;
+  color: #ddd;
+}
+/*********************** Demo - 7 *******************/
+.box7{position:relative}
+.box7:after,.box7:before{
+   width:100%;
+    height:100%;
+     background:rgba(11,33,47,.9);
+      position:absolute;
+      top:0;
+      left:0;
+       opacity:0;
+        transition:all .5s ease 0s;
+        -webkit-transition:all .5s ease 0s; -moz-transition:all .5s ease 0s; -ms-transition:all .5s ease 0s; -o-transition:all .5s ease 0s;
+   }
+.box7:after{ background:rgba(255,255,255,.3); border:2px solid #0dab76; top:0; left:170%; opacity:1; z-index:1; transform:skewX(45deg); transition:all 1s ease 0s; -webkit-transform:skewX(45deg); -moz-transform:skewX(45deg); -ms-transform:skewX(45deg); -o-transform:skewX(45deg); }
+.box7:hover:before{opacity:1}
+.box7:hover:after{left:-170%}
+.box7 .box-content{width:100%;position:absolute;bottom:-100%;left:0;transition:all .5s ease 0s}
+.box7:hover .box-content{bottom:30%}
+.box7 .post{display:block;font-size:15px;font-weight:600;color:#fff;margin-bottom:10px}
+.box10:after,.box10:before,.box1:after,.box1:before,.box2 .inner-content:after,.box3:after,.box3:before,.box4:before,.box5:after,.box5:before,.box6:after,.box7:after,.box7:before{content:""}
+.box1,.box11,.box12,.box13,.box14,.box16,.box17,.box18,.box2,.box20,.box21,.box3,.box4,.box5,.box5 .icon li a,.box6,.box7,.box8{overflow:hidden}
+.box1 .title,.box10 .title,.box4 .title,.box7 .title{letter-spacing:1px}
+.box3 .post,.box4 .post,.box5 .post,.box7 .post{font-style:italic}
+
+
+.hvr-back-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  overflow: hidden;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}
+.hvr-back-pulse:hover, .hvr-back-pulse:focus, .hvr-back-pulse:active {
+  -webkit-animation-name: hvr-back-pulse;
+  animation-name: hvr-back-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-color: #2098D1;
+  background-color: #585858;
+  color: #fff !important;
 }

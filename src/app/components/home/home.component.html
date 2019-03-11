@@ -6,25 +6,27 @@
 
     <div class="row cus-row">
       <!-- Cards OF News -->
-      <div class="cus-col wow slideInLeft" *ngFor="let new of showenNews">
-        <div class="card ">
+      <div class="cus-col " *ngFor="let new of showenNews">
+        <div class="card box7 animated fadeIn">
 
             <div class="img">
                 <img src={{new.enclosure.link}} alt="">
             </div>
-            <div class="overlay"></div>
-          <div class="mask">
-            <span class="title">{{new.title}}</span>
-            <br>
-            <span>{{new.pubDate}}</span>
+            <div class="overlay box-content">
+                <div class="mask">
+                    <span class="title">{{new.title}}</span>
+                    <br>
+                    <span class="data">{{new.pubDate}}</span>
 
-          </div>
+                  </div>
+            </div>
+
         </div>
       </div>
     </div>
     <!-- Btn Read More -->
     <div class="view-more">
-        <a class="" (click)="viewMore($event)" [hidden]="showenNews.length == allNews.length">VIEW MORE</a>
+        <a class="hvr-back-pulse" (click)="viewMore($event)" [hidden]="showenNews.length == allNews.length">VIEW MORE</a>
     </div>
 
   </div>
