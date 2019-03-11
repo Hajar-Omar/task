@@ -9,9 +9,9 @@ import { take } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
 
-  allNews : any = [];
+  allNews: any = [];
   showenNews: any = [];
-  feetTitle : string = '';
+  feetTitle: object = {};
 
   constructor(private http: HttpClient) { }
 
@@ -19,12 +19,14 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    const getAllNews = this.http.get(this.url);
+    const getAllNews = this.http.get<Inew>(this.url);
     getAllNews.subscribe((response) => {
-      this.feetTitle = response.feed.title;
+
+
+      this.feetTitle = response.feed;
       this.allNews = response.items;
-      this.showenNews = response.items.filter(function(ele, i) {  // to get the first 7
-        if(i < 7){
+      this.showenNews = response.items.filter(function (ele, i) {  // to get the first 7
+        if (i < 7) {
           return ele;
         }
       });
@@ -37,18 +39,18 @@ export class HomeComponent implements OnInit {
 
   }
 
- viewMore(e) {
-     let len: Number  = this.showenNews.length;  //7
-     let currentNews :any[]= this.showenNews;
-    this.allNews.forEach(function(ele, i){
-if( i >= len && i < (len +7)){
+  viewMore(e) {
+    let len = this.showenNews.length;  //7
+    let currentNews: any[] = this.showenNews;
+    this.allNews.forEach(function (ele, i) {
+      if (i >= len && i < (len + 7)) {
 
-  currentNews.push(ele)
-}
-     })
+        currentNews.push(ele)
+      }
+    })
 
 
-console.log(e);
+    console.log(e);
 
   }
 
