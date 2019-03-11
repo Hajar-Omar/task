@@ -1,5 +1,5 @@
 
-export interface Inew {
+interface Inew {
     feed: {
         title: string
     },
