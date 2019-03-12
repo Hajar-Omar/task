@@ -7,7 +7,7 @@
     <div class="row cus-row">
       <!-- Cards OF News -->
       <div class="cus-col " *ngFor="let new of showenNews">
-        <div class="card box7 animated fadeIn">
+        <div class="card box7 animated fadeIn" routerLink="/details/{{new.id}}">
 
             <div class="img">
                 <img src={{new.enclosure.link}} alt="">

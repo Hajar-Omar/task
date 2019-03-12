@@ -1,0 +1,28 @@
+<div class="block">
+  <div class="container">
+
+    <div class="row shadow p-2  rounded">
+      <div class="col-md-6">
+        <div class="img">
+          <img src={{blockDetails.enclosure.link}} alt="">
+        </div>
+
+
+      </div>
+      <div class="col-md-6">
+        <h3>{{blockDetails.title}}</h3>
+        <p>{{blockDetails.description}}</p>
+        <span>{{blockDetails.pubDate != null ? 'Data: ' + blockDetails.pubDate : ''}}</span>
+        <div class="btns">
+          <a href={{blockDetails.link}} target="_blank" class="hvr-back-pulse">View Article</a>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+
+

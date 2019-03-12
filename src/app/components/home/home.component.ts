@@ -1,7 +1,6 @@
 
 import { WOW } from 'node_modules/wowjs/dist/wow.min';
-import { Component, AfterViewInit , OnInit } from '@angular/core';
-
+import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { NewsService } from 'src/app/services/news/news.service';
 
 
@@ -13,23 +12,22 @@ import { NewsService } from 'src/app/services/news/news.service';
 
 
 
-export class HomeComponent  implements AfterViewInit , OnInit {
-
-
+export class HomeComponent implements AfterViewInit, OnInit {
 
   allNews: any[] = [];
   showenNews: any[] = [];
   feetTitle: string = '';
-  wow = new WOW({live: true});
+  wow = new WOW({ live: true });
 
   constructor(private newsService: NewsService) { }
 
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     this.wow.init();
-   };
+  };
   ngOnInit(): void {
     this.newsService.getAllNews().subscribe((response) => {
+console.log(response)
       this.feetTitle = response.feed.title;
       this.allNews = response.items;
       this.showenNews = response.items.filter(function (ele, i) {  // to get the first 7
@@ -37,6 +35,13 @@ export class HomeComponent  implements AfterViewInit , OnInit {
           return ele;
         }
       });
+      // for (let index = 0; index < this.allNews.length; index++) {
+      //   this.allNews[index]["id"] = index;
+      // }
+      this.allNews.forEach(function (ele, i) {
+       ele.id = i;
+      })
+      console.log(this.allNews)
     });
   }
 
