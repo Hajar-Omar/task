@@ -10,6 +10,7 @@ export class BarChartService {
   constructor(private httpClient :HttpClient) { }
 
   getBarChartData(){
+   // this.httpClient.get(this.url).subscribe(res => console.log(res))
     return this.httpClient.get<IBarChart>(this.url);
   }
 

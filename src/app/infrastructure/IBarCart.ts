@@ -2,7 +2,7 @@
 
 
    
-      served: string,
+      served: Number,
     name: string 
 
 }

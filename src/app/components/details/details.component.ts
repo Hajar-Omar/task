@@ -13,11 +13,12 @@ export class DetailsComponent implements OnInit {
 
   blockDetails: object = {};
   id: any = 0;
+  img : String = '';
   constructor(private newsService: NewsService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
 
-    //get details news 
+    //get details news
     this.id = this.activatedRoute.snapshot.params['id'];  //get url parameters
     this.newsService.getAllNews().subscribe((response) => {
       // response.items.forEach(function(ele,i){
@@ -25,6 +26,7 @@ export class DetailsComponent implements OnInit {
 
       //  this.blockDetails = ele;
       this.blockDetails = response.items[this.id];
+      this.img = response.items[this.id].enclosure.link;
       //  }
       // })
       console.log(this.blockDetails)
